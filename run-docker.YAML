@@ -1,0 +1,24 @@
+name: My custom action
+description: This action runs a Docker container.
+inputs:
+  image:
+    description: The Docker image to run.
+    type: string
+  ports:
+    description: The ports to expose.
+    type: array
+    items:
+      type: string
+outputs:
+  container_id:
+    description: The ID of the Docker container.
+    type: string
+runs:
+  using: docker
+  args:
+    - run
+    - --rm
+    - --interactive
+    - ${{ inputs.image }}
+    - -p
+    - "${{ inputs.ports }}"
