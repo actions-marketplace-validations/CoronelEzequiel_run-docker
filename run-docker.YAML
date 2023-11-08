@@ -1,5 +1,5 @@
 name: run-docker
-description: This action runs a Docker container.
+description: This action runs a Docker container
 inputs:
   image:
     description: The Docker image to run.
